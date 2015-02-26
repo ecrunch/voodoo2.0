@@ -19,6 +19,7 @@ var db = mongoose.connect(config.db.uri, config.db.options, function(err) {
 		console.log(chalk.red(err));
 	}
 });
+
 mongoose.connection.on('error', function(err) {
 	console.error(chalk.red('MongoDB connection error: ' + err));
 	process.exit(-1);
@@ -26,6 +27,7 @@ mongoose.connection.on('error', function(err) {
 );
 
 // Init the express application
+// NOTE: this call seems to bundle a lot together
 var app = require('./config/express')(db);
 
 // Bootstrap passport config

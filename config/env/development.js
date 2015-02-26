@@ -2,7 +2,8 @@
 
 module.exports = {
 	db: {
-		uri: 'mongodb://localhost/mean-dev',
+		//uri: 'mongodb://localhost/mean-dev',
+		uri: 'mongodb://localhost/test1',
 		options: {
 			user: '',
 			pass: ''
