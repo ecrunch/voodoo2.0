@@ -12,5 +12,15 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 			url: '/',
 			templateUrl: 'modules/core/views/home.client.view.html'
 		});
+	
+		// Schedule state routing
+		$stateProvider.
+		state('schedule', {
+			url: '/schedule',
+			templateUrl: 'modules/schedules/views/schedule.client.view.html'
+		});
+
+
+
 	}
 ]);
