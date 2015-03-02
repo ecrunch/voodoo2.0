@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('schedules').controller('ScheduleController', ['$scope', 'Authentication',
-	function($scope, Authentication) {
+angular.module('schedules').controller('ScheduleController', ['$scope', 'Authentication', 'Schedules', 
+	function($scope, Authentication, Schedules) {
 		// This provides Authentication context.
 		$scope.authentication = Authentication;
 
@@ -14,7 +14,13 @@ angular.module('schedules').controller('ScheduleController', ['$scope', 'Authent
 
 
 		$scope.create = function() {
-
+			var schedule = new Schedules();
+			schedule.$save(function(response) {
+				// nothing for now
+				alert("Success");
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data.message;
+			});
 		};
 
 
@@ -30,8 +36,7 @@ angular.module('schedules').controller('ScheduleController', ['$scope', 'Authent
 
 
 		$scope.find = function() {
-
-
+			$scope.schedules = Schedules.query();
 		};
 
 
@@ -39,6 +44,7 @@ angular.module('schedules').controller('ScheduleController', ['$scope', 'Authent
 
 
 		};
+
 
 
 
