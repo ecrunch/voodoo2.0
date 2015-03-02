@@ -9,13 +9,11 @@ var mongoose = require('mongoose'),
 
 
 
-var TaskSchema = new Schema({
+var ScheduleSchema = new Schema({
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
 	},
 });
 
-mongoose.model('Task', TaskSchema);
-
-
+mongoose.model('Schedule', ScheduleSchema);
