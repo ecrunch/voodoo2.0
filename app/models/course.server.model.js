@@ -5,6 +5,11 @@
  */
 var mongoose = require('mongoose'),
         Schema = mongoose.Schema;
+/**
+ * Users Schema
+ */
+
+var UsersSchema = new Schema({name: 'string'});
 
 /**
  * Course Schema
@@ -29,7 +34,10 @@ var CourseSchema = new Schema({
         user: {
                 type: Schema.ObjectId,
                 ref: 'User'
-        }
+        },
+
+	users: [UsersSchema]
+
 });
 
 mongoose.model('Course', CourseSchema);
