@@ -28,6 +28,10 @@ var TaskSchema = new Schema({
 	taskType: {
 		type: String,
 		default: 'Task'
+	},
+	prevScore: {
+		type: Number,
+		default: 0
 	}
 });
 
