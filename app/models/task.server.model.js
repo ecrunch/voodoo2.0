@@ -14,6 +14,21 @@ var TaskSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'User'
 	},
+	description: {
+		type: String,
+		default: 'User task'
+	},
+	totalMinutes: {
+		type: Number,
+		default: 0
+	},
+	dueDate: {
+		type: Date
+	},
+	taskType: {
+		type: String,
+		default: 'Task'
+	}
 });
 
 mongoose.model('Task', TaskSchema);
